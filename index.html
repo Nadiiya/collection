@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="msapplication-TileColor" content="#083644">
+    <meta name="theme-color" content="#083644">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Search</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.svg">
+    <!--    google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&family=Poppins&display=swap" rel="stylesheet">
+    <!--    styles-->
+    <link rel="stylesheet"  href="style.css">
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="header__go-back">
+                <a class="header__link header__link--back" onclick="history.back()">
+                    Back
+                </a>
+            </div>
+            <div class="header__icons">
+                <a class="header__link header__link--favorit"><span class="visually-hidden">Favorit</span></a>
+                <a class="header__link header__link--folder"><span class="visually-hidden">My Folder</span></a>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="search-form-wrapper">
+        <div class="container">
+            <form class="search-form" action="" method="get">
+                <span id="search-form__error" class="search-form__error"></span>
+                <label class="search-form__label visually-hidden" for="artist">Artist</label>
+                <input class="search-form__field" type="text" name="artist" id="artist" placeholder="Artist">
+                <select class="search-form__field search-form__field--select search-form__field--half" name="genre" id="genre">
+                    <option selected disabled>Genre</option>
+                    <option value="hip-hop">Hip hop</option>
+                    <option value="rock">Rock</option>
+                    <option value="folk">Folk</option>
+                    <option value="jazz">Jazz</option>
+                </select>
+                <select class="search-form__field search-form__field--select search-form__field--half" name="decade" id="decade">
+                    <option selected disabled>Decade</option>
+                    <option value="50-60">1950-60 рр.</option>
+                    <option value="60-70">1960-70 рр.</option>
+                    <option value="70-80">1970-80 рр.</option>
+                    <option value="80-90">1980-90 рр.</option>
+                    <option value="80-90">1980-90 рр.</option>
+                    <option value="90-00">1990-00 рр.</option>
+                    <option value="2000-10">2000-10 рр.</option>
+                    <option value="2010-20">2010-20 рр.</option>
+                    <option value="2020-30">2020-30 рр.</option>
+                </select>
+                <select class="search-form__field search-form__field--select" name="country" id="country">
+                    <option selected disabled>Country</option>
+                    <option value="usa">United States</option>
+                    <option value="deu">Germany</option>
+                    <option value="jpn">Japan</option>
+                    <option value="ukr">Ukraine</option>
+                </select>
+                <input class="button" type="submit" value="Search">
+
+            </form>
+        </div>
+    </div>
+    <div class="search-result">
+        <div class="container">
+            <div class="album-list" id="album-list">
+                <div class="album" id="111">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card1.png"
+                         srcset="assets/images/card1-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="112">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card2.png"
+                         srcset="assets/images/card2-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span class="album__info--value">1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="113">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card3.png"
+                         srcset="assets/images/card3-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="114">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card4.png"
+                         srcset="assets/images/card4-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="115">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card5.png"
+                         srcset="assets/images/card5-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="116">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card6.png"
+                         srcset="assets/images/card6-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="117">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card6.png"
+                         srcset="assets/images/card6-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="118">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card6.png"
+                         srcset="assets/images/card6-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+                <div class="album" id="119">
+                    <a href="#" class="album__icon-heart">
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z"
+                                  stroke="black" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <img class="album__img" src="assets/images/card6.png"
+                         srcset="assets/images/card6-2x.png 2x">
+                    <h3 class="album__name">Let There Be Rock</h3>
+                    <h4 class="album__info album__info--artist">AC/DC</h4>
+                    <p class="album__info">Year: <span>1990</span></p>
+                    <p class="album__info">Style: <span>Punk, Dub, Funk</span></p>
+                    <p class="album__info">Country: <span>USA</span></p>
+                    <a class="button album__add" href="#">Add</a>
+                </div>
+            </div>
+            <nav class="page-nav-wrapper">
+                <ul class="page-nav" id="page-nav">
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="page-nav">
+        <div class="container">
+
+        </div>
+    </div>
+</main>
+<script src="main.js"></script>
+</body>
+</html>

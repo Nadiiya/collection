@@ -1,0 +1,340 @@
+:root {
+    --main-color: #0A2530;
+    --field-border: #EDEEF0;
+    --heading-color: #0A2530;
+    --text-color: #738286;
+    --ink-light: #6C7072;
+    --white: #fff;
+}
+
+/*General*/
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+html {
+    font-size: 16px;
+}
+
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    padding: 0 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+.button:hover,
+.button:focus {
+    opacity: 0.8;
+}
+/*Header*/
+.header {
+    min-height: 62px;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__link {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+    position: relative;
+    min-height: 24px;
+    display: inline-flex;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.header__link:hover,
+.header__link:focus {
+    opacity: 0.8;
+}
+.header__link::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.header__link--back::before {
+    margin-right: 5px;
+    background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+}
+.header__link--favorit::before {
+    background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 9.32647C21 14.4974 12 20 12 20C12 20 3 14.4974 3 9.32647C3 2.30564 12 2.40044 12 8.57947C12 2.40044 21 2.49288 21 9.32647Z" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>')
+}
+.header__link--folder::before {
+    background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 18.2222V9.33333C21 8.86184 20.8104 8.40965 20.4728 8.07625C20.1352 7.74286 19.6774 7.55556 19.2 7.55556H13.1124C12.7781 7.55554 12.4503 7.46356 12.1659 7.28992C11.8816 7.11628 11.6518 6.86783 11.5023 6.57244L10.6977 4.98311C10.5482 4.68759 10.3182 4.43906 10.0337 4.2654C9.74912 4.09175 9.4212 3.99985 9.0867 4H4.8C4.32261 4 3.86477 4.1873 3.52721 4.5207C3.18964 4.8541 3 5.30628 3 5.77778V18.2222C3 18.6937 3.18964 19.1459 3.52721 19.4793C3.86477 19.8127 4.32261 20 4.8 20H19.2C19.6774 20 20.1352 19.8127 20.4728 19.4793C20.8104 19.1459 21 18.6937 21 18.2222Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+.header__icons .header__link:not(:last-child) {
+    margin-right: 15px;
+}
+
+/*Form*/
+.search-form-wrapper {
+    padding-top: 16px;
+    padding-bottom: 18px;
+}
+.search-form {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.search-form__field {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--field-border);
+    background: var(--white);
+    height: 42px;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    grid-column: span 2;
+}
+.search-form__field:focus-visible {
+    outline: var(--main-color) auto 1px;
+}
+.search-form__field option {
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.search-form__field--select {
+    padding: 10px 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 9L12 15L18 9" stroke="%230A2530" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 12px);
+    background-position-y: 10px;
+    color: #6C7072;
+}
+
+.search-form__field::placeholder {
+    color: #6C7072;
+    font-size: 16px;
+    font-weight: 400;
+}
+.search-form .button {
+    grid-column: span 2;
+}
+
+.search-form__error {
+    font-size: 11px;
+    color: red;
+}
+
+.search-form__field.search-form__field--half {
+    grid-column: span 1;
+}
+
+.album-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 12px 14px;
+}
+
+.album {
+    position: relative;
+}
+
+.album__icon-heart {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background-color: var(--white);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    left: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.album__icon-heart svg {
+    fill: none;
+    transition: all 0.3s ease-in-out;
+}
+.album__icon-heart:hover svg,
+.album__icon-heart:focus svg {
+    fill: rgba(255, 0, 0, 0.5);
+}
+
+.album__icon-heart img {
+    width: 20px;
+    height: 20px;
+}
+.album__img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.album__name {
+    color: var(--heading-color);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-style: normal;
+    font-weight: 700;
+}
+.album__info {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.album__info--artist {
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+.album__info span {
+    color: var(--heading-color);
+}
+.album__add {
+    margin-top: 10px;
+}
+.album__add::after {
+    content: '';
+    display: inline-block;
+    margin-left: 6px;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-position: center;
+    background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 16.6667V9.99999M10 9.99999V3.33333M10 9.99999H16.6667M10 9.99999H3.33334" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+
+/*pagination*/
+.page-nav-wrapper {
+    padding: 20px 0;
+}
+
+.page-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.page-nav__item {
+    text-decoration: none;
+    display: flex;
+    width: 40px;
+    padding: 10px;
+    margin: 0 2px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--white);
+    color: #738286;
+    font-size: 14px;
+    line-height: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.page-nav__item:hover,
+.page-nav__item:focus {
+    color: #fff;
+    background-color: rgba(8, 54, 68, 0.8);
+}
+
+.page-nav__item--active {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+@media (min-width: 450px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 20px;
+    }
+    .album-list {
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
